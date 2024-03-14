@@ -13,7 +13,8 @@ public class Main {
         while (go) {
             MenuMaps();
             opcionMap = sc.nextInt();
-            Map<K, V> estudiantes = FactoryMap.getMap(opcion);
+            FactoryMap<String, Estudiantes> factoryEstudiantes = new FactoryMap<String, Estudiantes>();
+            AbstractMap<String, Estudiantes> estudiantes = factoryEstudiantes.getMap(opcion);
 
             // Cargar datos del JSON
 
