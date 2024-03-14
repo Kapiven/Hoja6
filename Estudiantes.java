@@ -1,30 +1,55 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Estudiantes {
     
-    private List<String> datosEstudiantes;
+    private String carnet;
+    private String nombre;
+    private String nacionalidad;
+    private int edad;
 
-    public Estudiantes(String rutaArchivo) {
-        datosEstudiantes = new ArrayList<>();
-        cargarDatosDesdeArchivo(rutaArchivo);
+    
+    public Estudiantes(String carnet, String nombre, String nacionalidad, int edad) {
+        this.carnet = carnet;
+        this.nombre = nombre;
+        this.nacionalidad = nacionalidad;
+        this.edad = edad;
     }
 
-    private void cargarDatosDesdeArchivo(String rutaArchivo) {
-        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                datosEstudiantes.add(linea);
-            }
-        } catch (IOException e) {
-            System.err.println("Error al leer el archivo: " + e.getMessage());
-        }
+
+    public String getCarnet() {
+        return carnet;
     }
 
-    public List<String> getDatosEstudiantes() {
-        return datosEstudiantes;
+
+    public void setCarnet(String carnet) {
+        this.carnet = carnet;
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
+
+    public int getEdad() {
+        return edad;
+    }
+
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 }
