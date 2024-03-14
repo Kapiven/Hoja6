@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class FactoryMap<K, V> {
-    public static Map<K, V> getMap(int opcion) {
+    public AbstractMap<K, V> getMap(int opcion) {
         switch (opcion) {
             case 1:
                 return new HashMap<K, V>();
