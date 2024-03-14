@@ -1,39 +1,49 @@
 public class Estudiantes {
-    
-    private String carnet;
+
     private String nombre;
+    private String numero;
+    private String correo;
     private String nacionalidad;
-    private int edad;
+    private int postalZip;
 
     
-    public Estudiantes(String carnet, String nombre, String nacionalidad, int edad) {
-        this.carnet = carnet;
+    public Estudiantes(String nombre, String numero, String correo, String nacionalidad, int postalZip) {
         this.nombre = nombre;
+        this.numero = numero;
+        this.correo = correo;
         this.nacionalidad = nacionalidad;
-        this.edad = edad;
+        this.postalZip = postalZip;
     }
 
-
-    public String getCarnet() {
-        return carnet;
-    }
-
-
-    public void setCarnet(String carnet) {
-        this.carnet = carnet;
-    }
-
-
+    // Nombre
     public String getNombre() {
         return nombre;
     }
-
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
 
+    // Numero
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    // Correo
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    // Nacionalidad
     public String getNacionalidad() {
         return nacionalidad;
     }
@@ -43,13 +53,13 @@ public class Estudiantes {
         this.nacionalidad = nacionalidad;
     }
 
-
-    public int getEdad() {
-        return edad;
+    // postalZip
+    public int getpostalZip() {
+        return postalZip;
     }
 
-
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setpostalZip(int postalZip) {
+        this.postalZip = postalZip;
     }
+
 }
