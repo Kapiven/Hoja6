@@ -1,5 +1,3 @@
-package Hoja6;
-
 public class Organica implements IHash {
 
     @Override
