@@ -9,7 +9,7 @@ public class FactoryHash {
                 return new MD5();
 
             } else if (input.equalsIgnoreCase("sha1")) {
-                return new SHA1();
+                return new SHA1_HASH();
 
             } else {
                 throw new IllegalArgumentException("Tipo de función hash no válido");
