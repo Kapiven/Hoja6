@@ -23,7 +23,7 @@ public class LectorArchivo {
                         String nacionalidad = campos[2];
                         int edad = Integer.parseInt(campos[3]);
     
-                        Estudiantes estudiante = new Estudiantes(carnet, nombre, nacionalidad, edad);
+                        Estudiantes estudiante = new Estudiantes(carnet, nombre, nacionalidad, nacionalidad, edad);
                         estudiantesPorCarnet.put(carnet, estudiante);
                     }
                 }
