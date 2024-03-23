@@ -19,11 +19,11 @@ public class LectorArchivo {
                 String linea;
                 while ((linea = br.readLine()) != null) {
                     String[] campos = linea.split(",");
-                    if (campos.length >= 4) {
-                        String nombre = campos[0];
-                        String numero = campos[1];
-                        String correo = campos[2];
-                        String nacionalidad = campos[3];
+                    if (campos.length >= 5) {
+                        String nombre = campos[0].trim();
+                        String numero = campos[1].trim();
+                        String correo = campos[2].trim();
+                        String nacionalidad = campos[4].trim();
                         int postalZip = Integer.parseInt(campos[3]);
     
                         Estudiantes estudiante = new Estudiantes(nombre, numero, correo, nacionalidad, postalZip);
@@ -49,7 +49,6 @@ public class LectorArchivo {
                 estudiantesPorNacionalidad.get(nacionalidad).add(estudiante);
             }
             return estudiantesPorNacionalidad;
-        }
 }
 
 
