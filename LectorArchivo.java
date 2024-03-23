@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class LectorArchivo {
@@ -18,13 +20,14 @@ public class LectorArchivo {
                 while ((linea = br.readLine()) != null) {
                     String[] campos = linea.split(",");
                     if (campos.length >= 4) {
-                        String carnet = campos[0];
-                        String nombre = campos[1];
-                        String nacionalidad = campos[2];
-                        int edad = Integer.parseInt(campos[3]);
+                        String nombre = campos[0];
+                        String numero = campos[1];
+                        String correo = campos[2];
+                        String nacionalidad = campos[3];
+                        int postalZip = Integer.parseInt(campos[3]);
     
-                        Estudiantes estudiante = new Estudiantes(carnet, nombre, nacionalidad, nacionalidad, edad);
-                        estudiantesPorCarnet.put(carnet, estudiante);
+                        Estudiantes estudiante = new Estudiantes(nombre, numero, correo, nacionalidad, postalZip);
+                        estudiantesPorCarnet.put(numero, estudiante);
                     }
                 }
             } catch (IOException e) {
@@ -34,6 +37,18 @@ public class LectorArchivo {
     
         public Estudiantes buscarPorCarnet(String carnet) {
             return estudiantesPorCarnet.get(carnet);
+        }
+
+        public Map<String, List<Estudiantes>> estudiantesPorNacionalidad() {
+            Map<String, List<Estudiantes>> estudiantesPorNacionalidad = new HashMap<>();
+            for (Estudiantes estudiante : estudiantesPorCarnet.values()) {
+                String nacionalidad = estudiante.getNacionalidad();
+                if (!estudiantesPorNacionalidad.containsKey(nacionalidad)) {
+                    estudiantesPorNacionalidad.put(nacionalidad, new ArrayList<>());
+                }
+                estudiantesPorNacionalidad.get(nacionalidad).add(estudiante);
+            }
+            return estudiantesPorNacionalidad;
         }
 }
 
